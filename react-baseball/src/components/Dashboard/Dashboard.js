@@ -7,12 +7,35 @@ import React from 'react'
 // - changes recorded on this component should update the information shown by the `Display` component.
 // - This is the component I will have my buttons mounted onto.
 
-export default Dashboard = () => {
+const Dashboard = function({scoreboard}) {
     //something in here.
 
     return (
         <div>
-            <h1>There's something displaying in this component.</h1>
+            <button 
+                onClick={() => {
+                    scoreboard('strike')}}>
+                        Strike
+            </button>
+            
+            <button 
+                onClick={() => {
+                    scoreboard('ball')}}>
+                        Ball
+            </button>
+
+            <button 
+                onClick={() => {
+                    scoreboard('foul')}}>
+                        Foul
+            </button>
+            <button 
+                onClick={() => {
+                    scoreboard('hit')}}>
+                        Hit
+            </button>
         </div>
     )
 }
+
+export default Dashboard

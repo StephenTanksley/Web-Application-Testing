@@ -1,13 +1,93 @@
-import React from 'react';
-// import Display from './components/Display/Display'
+import React, {useState} from 'react';
 import Dashboard from './components/Dashboard/Dashboard'
+import Display from './components/Display/Display';
 import './App.css';
 
 function App() {
+  //Need to follow both balls and strikes and start with a state value of (0) in both cases.
+  const [strikes, setStrikes] = useState(0)
+  const [balls, setBalls] = useState(0)
+  const [outs, setOuts] = useState(0)
+
+  const scoreboard = (callString) => {
+    switch (callString) {
+
+      case 'strike':
+        const newStrikeInt = strikes + 1
+          if(strikes>1) {
+            setBalls(0)
+            setStrikes(0)
+            setOuts(outs + 1)
+          } else {
+            setStrikes(newStrikeInt)
+            console.log('strikes', strikes)
+          }
+          break;
+          
+      case 'ball':
+        const newBallInt = balls + 1
+
+          if(balls>2) {
+            setBalls(0)
+            setStrikes(0)
+          } else {
+            setBalls(newBallInt)
+            console.log('balls', balls)
+          }
+
+        break;
+
+      case 'foul':
+        const strikeCount = strikes
+          //We're only allowed 2 foul balls. If you hit another foul ball and strikes are already at 2,
+          if(strikeCount <= 1) {
+            setStrikes(strikeCount + 1)
+          } else { 
+            return strikes;
+          }
+
+        break;
+
+      case 'hit':
+
+          setBalls(0)
+            console.log(balls) 
+        
+          setStrikes(0)
+            console.log(strikes) 
+
+        break;
+
+      default: 
+        console.log('something went wrong')
+        break;
+    }
+  }
+
+  const clearBoard = () => {
+    setStrikes(0)
+    setBalls(0)
+    setOuts(0)
+  }
+
   return (
     <div className="App">
       <h1>Hello. This is a baseball app.</h1>
-      <Dashboard />
+
+      <Display 
+        strikes={strikes} 
+        balls={balls}
+        outs={outs}
+        />
+      
+      <Dashboard 
+        scoreboard={scoreboard}
+        strikes={strikes}
+        setStrikes={setStrikes}
+        balls={balls}
+        setBalls={setBalls}
+        />
+      <button onClick={() => clearBoard()}>Clear</button>
     </div>
   );
 }

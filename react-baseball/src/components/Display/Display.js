@@ -1,15 +1,25 @@
 import React from 'react'
-// import Button from '../Button/Button'
 
-
-
-
-export default Display = () => {
+const Display = (props) => {
     //something in here.
 
     return (
-        <div>
-            <h1>There's something displaying in this component.</h1>
+        <>
+        <div className="display-container">
+        `    <div className="strikes">
+                <p>Strikes: {props.strikes}</p>
+            </div>
+
+            <div className="balls">
+                <p>Balls: {props.balls}</p>
+            </div>
+
+            <div className="outs">
+                <p>Outs: {props.outs}</p>
+            </div>`
         </div>
+        </>
     )
 }
+
+export default Display;
