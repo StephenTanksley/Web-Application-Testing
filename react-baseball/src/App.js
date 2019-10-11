@@ -9,14 +9,15 @@ function App() {
   const [balls, setBalls] = useState(0)
   const [outs, setOuts] = useState(0)
 
+
+
   const scoreboard = (callString) => {
     switch (callString) {
 
       case 'strike':
         const newStrikeInt = strikes + 1
-          if(strikes>1) {
-            setBalls(0)
-            setStrikes(0)
+          if(strikes === 3) {
+            clearBatter()
             setOuts(outs + 1)
           } else {
             setStrikes(newStrikeInt)
@@ -27,9 +28,8 @@ function App() {
       case 'ball':
         const newBallInt = balls + 1
 
-          if(balls>2) {
-            setBalls(0)
-            setStrikes(0)
+          if(balls === 4) {
+            clearBatter()
           } else {
             setBalls(newBallInt)
             console.log('balls', balls)
@@ -64,9 +64,13 @@ function App() {
     }
   }
 
-  const clearBoard = () => {
+  const clearBatter = () => {
     setStrikes(0)
     setBalls(0)
+  }
+
+  const clearBoard = () => {
+    clearBatter()
     setOuts(0)
   }
 

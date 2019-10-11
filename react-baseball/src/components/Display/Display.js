@@ -6,7 +6,7 @@ const Display = (props) => {
     return (
         <>
         <div className="display-container">
-        `    <div className="strikes">
+            <div className="strikes">
                 <p>Strikes: {props.strikes}</p>
             </div>
 
@@ -16,7 +16,7 @@ const Display = (props) => {
 
             <div className="outs">
                 <p>Outs: {props.outs}</p>
-            </div>`
+            </div>
         </div>
         </>
     )
