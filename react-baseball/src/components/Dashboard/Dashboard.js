@@ -10,6 +10,7 @@ import React from 'react'
 const Dashboard = ({scoreboard}) => {
 
     return (
+
         <div>
             <button 
                 onClick={() => {

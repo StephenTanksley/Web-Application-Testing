@@ -2,6 +2,19 @@
 // https://jestjs.io/docs/en/configuration.html
 
 module.exports = {
+
+//imported code from https://github.com/facebook/jest/issues/6933
+
+  //   collectCoverageFrom: ["src/**/*.{js,jsx,mjs}"],
+  //   testMatch: ["<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}", "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"],
+  //   transform: {
+  //     "^.+\\.(js|jsx|mjs)$": "<rootDir>/config/jest/jest-transformer.js"
+  //   },
+  //   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"]
+  // };
+
+
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

@@ -1,23 +1,18 @@
 import React from 'react';
-import * as rtl from 'react-testing-library'
-import 'jest-dom/extend-expect'
+import * as rtl from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import Dashboard from './Dashboard';
 
-it('renders without crashing', () => {
-  const wrapper = rtl.render(
-    <Dashboard />
-  );
+afterEach(rtl.cleanup);
 
-  const strike = wrapper.queryByText(/strike/i);
-    expect(strike).toBeInTheDocument()
+describe('Dashboard', () => {
+  it('has buttons inside it', () => {
+    const simulatedDOM = rtl.render(<Dashboard />)
+    expect(simulatedDOM).toBeVisible()
+  })
+})
 
-  const ball = wrapper.queryByText(/ball/i);
-    expect(ball).toBeInTheDocument()
 
-  const foul = wrapper.queryByText(/foul/i);
-    expect(foul).toBeInTheDocument()
-
-  const hit = wrapper.queryByText(/hit/i);
-    expect(hit).toBeInTheDocument()
-
-});
+test('render Dashboard', () => {
+  const wrapper = rtl.render(<Dashboard />)
+})

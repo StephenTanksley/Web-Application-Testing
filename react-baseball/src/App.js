@@ -5,79 +5,79 @@ import './App.css';
 
 function App() {
   //Need to follow both balls and strikes and start with a state value of (0) in both cases.
-  const [strikes, setStrikes] = useState(0)
-  const [balls, setBalls] = useState(0)
-  const [outs, setOuts] = useState(0)
+  // const [strikes, setStrikes] = useState(0)
+  // const [balls, setBalls] = useState(0)
+  // const [outs, setOuts] = useState(0)
 
 
 
-  const scoreboard = (callString) => {
-    switch (callString) {
+  // const scoreboard = (callString) => {
+  //   switch (callString) {
 
-      case 'strike':
-        const newStrikeInt = strikes + 1
-          if(strikes === 3) {
-            clearBatter()
-            setOuts(outs + 1)
-          } else {
-            setStrikes(newStrikeInt)
-            console.log('strikes', strikes)
-          }
-          break;
+  //     case 'strike':
+  //       const newStrikeInt = strikes + 1
+  //         if(strikes === 3) {
+  //           clearBatter()
+  //           setOuts(outs + 1)
+  //         } else {
+  //           setStrikes(newStrikeInt)
+  //           console.log('strikes', strikes)
+  //         }
+  //         break;
           
-      case 'ball':
-        const newBallInt = balls + 1
+  //     case 'ball':
+  //       const newBallInt = balls + 1
 
-          if(balls === 4) {
-            clearBatter()
-          } else {
-            setBalls(newBallInt)
-            console.log('balls', balls)
-          }
+  //         if(balls === 4) {
+  //           clearBatter()
+  //         } else {
+  //           setBalls(newBallInt)
+  //           console.log('balls', balls)
+  //         }
 
-        break;
+  //       break;
 
-      case 'foul':
-        const strikeCount = strikes
-          //We're only allowed 2 foul balls. If you hit another foul ball and strikes are already at 2,
-          if(strikeCount <= 1) {
-            setStrikes(strikeCount + 1)
-          } else { 
-            return strikes;
-          }
+  //     case 'foul':
+  //       const strikeCount = strikes
+  //         //We're only allowed 2 foul balls. If you hit another foul ball and strikes are already at 2,
+  //         if(strikeCount <= 1) {
+  //           setStrikes(strikeCount + 1)
+  //         } else { 
+  //           return strikes;
+  //         }
 
-        break;
+  //       break;
 
-      case 'hit':
+  //     case 'hit':
 
-          setBalls(0)
-            console.log(balls) 
+  //         setBalls(0)
+  //           console.log(balls) 
         
-          setStrikes(0)
-            console.log(strikes) 
+  //         setStrikes(0)
+  //           console.log(strikes) 
 
-        break;
+  //       break;
 
-      default: 
-        console.log('something went wrong')
-        break;
-    }
-  }
+  //     default: 
+  //       console.log('something went wrong')
+  //       break;
+  //   }
+  // }
 
-  const clearBatter = () => {
-    setStrikes(0)
-    setBalls(0)
-  }
+  // const clearBatter = () => {
+  //   setStrikes(0)
+  //   setBalls(0)
+  // }
 
-  const clearBoard = () => {
-    clearBatter()
-    setOuts(0)
-  }
+  // const clearBoard = () => {
+  //   clearBatter()
+  //   setOuts(0)
+  // }
 
   return (
     <div className="App">
       <h1>Hello. This is a baseball app.</h1>
-
+{/* 
       <Display 
         strikes={strikes} 
         balls={balls}
@@ -85,13 +85,13 @@ function App() {
         />
       
       <Dashboard 
-        scoreboard={scoreboard}
-        strikes={strikes}
-        setStrikes={setStrikes}
-        balls={balls}
-        setBalls={setBalls}
+        // scoreboard={scoreboard}
+        // strikes={strikes}
+        // setStrikes={setStrikes}
+        // balls={balls}
+        // setBalls={setBalls}
         />
-      <button onClick={() => clearBoard()}>Clear</button>
+      <button onClick={() => clearBoard()}>Clear</button> */}
     </div>
   );
 }
