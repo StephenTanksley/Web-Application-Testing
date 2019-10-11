@@ -7,8 +7,7 @@ import React from 'react'
 // - changes recorded on this component should update the information shown by the `Display` component.
 // - This is the component I will have my buttons mounted onto.
 
-const Dashboard = function({scoreboard}) {
-    //something in here.
+const Dashboard = ({scoreboard}) => {
 
     return (
         <div>
